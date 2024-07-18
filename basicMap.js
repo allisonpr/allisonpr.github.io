@@ -31,7 +31,7 @@ let CPCC = L.layerGrouo(markers);
 let street = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-})
+}).addTo(map);
 
 var topo = L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}', {
 	maxZoom: 20,
@@ -46,7 +46,7 @@ let overlayMaps = {
 CPCC: CPCC
 }
 
-let map = L.map("map", [
+let map = L.map("map", {
   center: [35.2176665,-80.831473]
   zoom: 16,
   layers: [street, CPCC]
